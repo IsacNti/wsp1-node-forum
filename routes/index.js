@@ -1,10 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async function (req, res) {
-    res.send('Hello you!')
-});
-
 module.exports = router;
 
 const mysql = require('mysql2');
@@ -19,11 +15,15 @@ const promisePool = pool.promise();
 
 router.get('/', async function (req, res, next) {
     const [rows] = await promisePool.query("SELECT * FROM il05forum");
-    res.json({ rows });
+res.render('index.njk', {
+    rows: rows,
+    title: 'Forum',
+    });
+});
 
-    res.render('index.njk', {
-        rows: rows,
-        title: 'Forum',
+router.get('/new', async function (req, res, next) {
+    res.render('new.njk', {
+        title: 'Nytt inlägg',
     });
 });
 
@@ -33,8 +33,3 @@ router.post('/new', async function (req, res, next) {
     res.redirect('/');
 });
 
-router.get('/new', async function (req, res, next) {
-    res.render('new.njk', {
-        title: 'Nytt inlägg',
-    });
-});

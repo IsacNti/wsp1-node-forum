@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>Super Page</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    {% block  content %}
-    {% endblock %}
+    <nav class="navbar">
+        <div class="navbar__inner container">
+            <a href="/" class="logo">Super</a>
+            <button class="navbar__button" aria-label="Open menu">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"/></svg>
+            </button>
+            <div class="navbar__collapse">
+                {% include "nav.njk" %}
+            </div>
+        </div>
+    </nav>
+    <main class="container flow">
+        <div class="inlagg-container">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <section class="flow">
+            <h2>It just works</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam libero adipisci voluptatem ratione ex iste hic neque vel placeat repellendus voluptate amet fugiat, accusantium soluta quisquam ullam quis laborum quas!</p>
+            <p>Nobis aliquid distinctio ipsa non dignissimos est nostrum, reiciendis natus corrupti animi suscipit earum! Repellendus, dicta consequatur corporis porro eveniet deleniti aperiam nesciunt sapiente doloribus. Asperiores ab iste officiis recusandae.</p>
+            <p>Mollitia delectus ipsa ducimus vitae molestias, quasi quos suscipit magni accusantium! Deserunt, ex ea. Ea, placeat aliquid? Sint accusamus at ipsam suscipit, sapiente iure distinctio unde iusto beatae, consequatur ratione.</p>
+        </section>
+    </main>
+    <footer class="container">
+        {% include "footer.njk" %}
+    </footer>
+    <script src="js/menu.js"></script>
 </body>
 </html>
