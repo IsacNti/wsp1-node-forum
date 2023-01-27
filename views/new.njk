@@ -3,8 +3,12 @@
 
 <form action="/new" method="post">
     <div class="inlagg">
-        <input type="text" name="author" id="author">
         <label for="author">Författare</label>
+        <select name="author" id="author">
+            {% for user in users %}
+                <option value="{{ user.name }}">{{ user.name }}</option>
+            {% endfor %}
+        </select>
     </div>
     <div class="inlagg">
         <input type="text" name="title" id="title">
