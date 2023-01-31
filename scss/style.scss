@@ -1,12 +1,17 @@
 @use 'reset';
 
+body{
+    background-color: #9C9C8B;
+    color: black;
+}
+
 .container {
     width: min(80ch, 100vw - 2rem);
     margin-inline: auto;
 }
 
 .navbar {
-    background-color: lavenderblush;
+    background-color: #FF7C00;
     &__inner {
         display: flex;
         flex-wrap: wrap;
@@ -86,10 +91,34 @@ footer {
 
 .inlagg{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 
 .inlagg-container {
-    background-color: lavenderblush;
+    background-color: #FF8C55;
     padding: 1rem;
+}
+
+.data-containter{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+a{
+    color: rgb(0, 12, 174);
+}
+
+.menu-img {
+    width: 8rem;
+    height: auto;
+}
+
+.data-text{
+    padding: 1rem;
+    background-color: #efefef;
+    border: 2px solid black;
+}
+
+.data-samling{
+    padding: 0.5rem;
 }
